@@ -10,7 +10,6 @@ router.get('/', async (req, res) => {
     const userId = req.query.userId; 
 
     try {
-        // Find the user by userId
         const user = await User.findById(userId);
 
         if (!user) {
@@ -28,10 +27,9 @@ router.get('/', async (req, res) => {
 // POST /tracker - adding places to existing iser
 router.post('/', async (req, res) => {
     const { newPlace } = req.body;
-    const userId = req.body.userId; // Assuming you send userId from the frontend
+    const userId = req.body.userId; 
 
     try {
-        // Find the user by userId and update the places array
         const user = await User.findByIdAndUpdate(userId, {
             $push: { places: newPlace }
         }, { new: true });
@@ -53,7 +51,6 @@ router.delete('/:userId/places/:index', async (req, res) => {
     const userId = req.params.userId;
     const index = req.params.index;
     try {
-        // Find the user by userId
         const user = await User.findById(userId);
 
         if (!user) {
@@ -77,7 +74,6 @@ router.put('/:userId/places/:index', async (req, res) => {
     const newCity = req.body.newCity;
 
     try {
-        // Find the user by userId
         const user = await User.findById(userId);
 
         if (!user) {

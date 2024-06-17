@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
-// import styles from '../TravelTracker/CoutryTracker.module.css'
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios'; 
 
-// const currentUserId = localStorage.getItem('userId')
-// console.log('Inside CountrySelect currentUserIs', currentUserId);
 
 const CountrySelect = ({ selectedCountry, onChange }) => {
     const [countries, setCountries] = useState([]);
@@ -116,9 +113,13 @@ const handleEdit = async (index) => {
   }
 };
 
+const handlePrint = () => { 
+    window.print(); 
+};
+
     return (
         <Container>
-            <Form  onSubmit={handleSubmit} >
+            <Form  onSubmit={handleSubmit}  style={{backgroundColor: "white"}}>
                 <CountrySelect 
                   selectedCountry={selectedCountry} 
                   onChange={setSelectedCountry} 
@@ -141,6 +142,8 @@ const handleEdit = async (index) => {
                     </li>                    
                     ))}
                 </ul>
+                <button onClick={handlePrint}>Print page where you have been</button>
+
             </div>
           </Form>
         </Container>

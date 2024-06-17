@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import styles from './LoginStyles/LoginStyles.module.css'
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 function Register() {
   const [email, setEmail] = useState('');
@@ -27,25 +29,27 @@ function Register() {
   }
 
   return (
-    <div>
-      <h1>Login</h1>
+    <div className='container w-25 bg-warning' >
+      <h1 className="text-center ">Login</h1>
       <form onSubmit={handleSubmit}>
         <input
           type='email'
+          className="form-control    mb-3"
           onChange={(e) => setEmail(e.target.value)}
           placeholder='email'
           value={email}
         />
         <input
           type='password'
+          className="form-control mb-3"
           onChange={(e) => setPassword(e.target.value)}
           placeholder='password'
           value={password}
         />
-        <button type="submit">Login</button>
+        <button  className="btn btn-primary" type="submit">Login</button>
       </form>
-      <p>OR</p>
-      <Link to="/">Register</Link>
+      <p className="text-center mt-3">OR</p>
+      <Link to="/" className="d-block text-center">Register</Link>
     </div>
   );
 }

@@ -5,10 +5,6 @@ import cors from 'cors';
 import User from './models/User.js'; 
 import tracker from './routes/tracker.js'
 
-
-
-
-
 dotenv.config();
 mongoose.connect(process.env.ATLAS_URL);
 

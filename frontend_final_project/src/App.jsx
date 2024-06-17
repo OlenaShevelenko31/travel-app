@@ -9,6 +9,7 @@ import Home from './pages/home'
 import TravelTracker from './pages/travelTracker'
 import ContactUs from './pages/contactUs'
 import Logout from './pages/logout'
+import VideoBG from './components/VideoBG';
 
 
 // import Navbar from './components/Navbar';
@@ -20,6 +21,7 @@ function App() {
   
   return (
     <>
+    <VideoBG/>
     {/* <Navbar/> */}
       <Routes>
         <Route path='/' element={<Register/>}></Route>
