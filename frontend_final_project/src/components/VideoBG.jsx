@@ -6,7 +6,7 @@ function VideoBG() {
     <div>
         <video className='videoTag' autoPlay loop muted>
     <source src={video} type='video/mp4' />
-</video>
+  </video>
     </div>
   )
 }

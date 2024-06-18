@@ -23,6 +23,8 @@ const Contact = () => {
     .then(
       () => {
         console.log('SUCCESS!');
+        alert("Request has send!");
+        form.current.reset();
       },
       (error) => {
         console.log('FAILED...', error.text);
@@ -35,7 +37,6 @@ const Contact = () => {
     <div>
       <Navbar/>
 
-      
       <div >
         <form className='contactForm' ref={form} onSubmit={sendEmail}>
           <label>Name</label>
@@ -48,7 +49,6 @@ const Contact = () => {
         </form>
       </div>
     
-
     </div>
   );
 

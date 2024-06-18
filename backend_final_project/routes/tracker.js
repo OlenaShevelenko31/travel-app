@@ -3,8 +3,6 @@ import User from "../models/User.js";
 
 const router = express.Router();
 
-
-
 // GET - /tracker - get all places where have been traveled
 router.get('/', async (req, res) => {
     const userId = req.query.userId; 
@@ -22,7 +20,6 @@ router.get('/', async (req, res) => {
         res.status(500).json({ error: 'Server error' });
     }
 });
-
 
 // POST /tracker - adding places to existing iser
 router.post('/', async (req, res) => {
@@ -80,12 +77,11 @@ router.put('/:userId/places/:index', async (req, res) => {
             return res.status(404).json({ message: 'User not found' });
         }
 
-        // Update only the city part of the place at the specified index in the places array
         const currentPlace = user.places[index];
-        const currentCountry = currentPlace.split(', ')[0]; // Extract current country
-        const newPlace = `${currentCountry}, ${newCity}`; // Create new place string with updated city
+        const currentCountry = currentPlace.split(', ')[0]; 
+        const newPlace = `${currentCountry}, ${newCity}`; 
 
-        user.places[index] = newPlace; // Update the places array
+        user.places[index] = newPlace; 
         await user.save();
 
         res.json({ success: true, message: 'Place updated successfully', user });

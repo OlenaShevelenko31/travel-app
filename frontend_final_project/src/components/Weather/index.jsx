@@ -84,8 +84,8 @@ function Weather() {
   };
 
   return (
-    <Container>
-      <div className={styles.container} style={{backgroundColor: "white"}}>
+    <Container >
+      <div className={styles.container} style={{backgroundColor: "bisque"}}>
         <div className={styles.header} >
           <h1>Weather for today:</h1>
           <input
@@ -100,7 +100,7 @@ function Weather() {
         </div>
 
         {weatherData && (
-          <div>
+          <div className={styles.header}>
             <div id="whenWhere">
               <p id="city">{weatherData.location.name}</p>
               <p id="date">{getOurDate()}</p>

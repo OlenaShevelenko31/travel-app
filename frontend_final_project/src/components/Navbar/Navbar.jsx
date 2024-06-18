@@ -10,7 +10,6 @@ function Navbar() {
         <Link className={styles.links}  to='/tracker'>Travel tracker</Link>
         <Link className={styles.links}  to='/contact'>Contact Us</Link>
         <Link className={styles.links}  to='/logout'>Logout</Link>
-
       </nav>
     </>
   )

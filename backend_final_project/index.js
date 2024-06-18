@@ -20,9 +20,6 @@ app.post('/login', async (req, res) => {
     try {
       const { email, password } = req.body;
       const user = await User.findOne({ email });
-      // const userId = localStorage.getItem('userId');
-
-      // const token = jwt.sign({name: user.name}, process.env.KEY, {expiresIn: '5h'}) // authorize the user
       
       if (user) {
         if (user.password === password) {

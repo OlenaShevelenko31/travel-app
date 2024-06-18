@@ -6,7 +6,6 @@ import Container from 'react-bootstrap/Container';
 
 function FactsPost() {
   const location = useLocation();
-  // const userName = location.state && location.state.name ? location.state.name : 'Guest';
 
   return (
     <Container className='factBackground'>

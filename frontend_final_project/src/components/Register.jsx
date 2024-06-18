@@ -51,8 +51,9 @@ function Register() {
         />
         <button className="btn btn-primary" type="submit" >Register</button>
       </form>
-      <p className="text-center mt-3">OR</p>
-      <Link className="d-block text-center" to="/login">Login Page</Link>
+      <br />      
+      <Link className="btn btn-primary d-block text-center pb-2" to="/login">Login Page</Link>
+      <br />
     </div>
   );
 }

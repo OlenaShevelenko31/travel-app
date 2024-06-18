@@ -3,6 +3,7 @@ import Select from 'react-select';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios'; 
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 
 const CountrySelect = ({ selectedCountry, onChange }) => {
@@ -73,8 +74,6 @@ const handleSubmit = async (e) => {
   }
 };
 
-
-
 // DELETE place
 const handleDelete = async (index) => {
   try {
@@ -130,21 +129,21 @@ const handlePrint = () => {
                   value={city} 
                   onChange={(e) => setCity(e.target.value)} 
                 />
-                <button type="submit">Submit</button>
+                <button className="btn btn-primary text-center p-1" type="submit">Submit</button>
             <div>
                 <h3 style={{display: 'flex', justifyContent: "center"}}>Places Traveled</h3>
                 <ul>
                     {placesTraveled.map((place, index) => (
                       <li key={index}>
                         {place} 
-                        <button onClick={() => handleEdit(index)}>Edit</button>
-                        <button onClick={() => handleDelete(index)}>Delete</button>
+                        <button className="btn btn-warning text-center p-1" onClick={() => handleEdit(index)}>Edit</button>
+                        <button className="btn btn-primary text-center p-1" onClick={() => handleDelete(index)}>Delete</button>
                     </li>                    
                     ))}
                 </ul>
-                <button onClick={handlePrint}>Print page where you have been</button>
-
+                <button className="btn btn-success" onClick={handlePrint}>Print page where you have been</button>
             </div>
+            <br />
           </Form>
         </Container>
     );

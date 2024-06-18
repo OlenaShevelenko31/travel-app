@@ -21,6 +21,7 @@ function Register() {
         console.log(userId);
         navigate(`/home`);
       } else {
+        alert('Check your login or password!')
         console.log('Login failed:', message); 
       }
     } catch (err) {
@@ -46,10 +47,11 @@ function Register() {
           placeholder='password'
           value={password}
         />
-        <button  className="btn btn-primary" type="submit">Login</button>
+        <button  className="btn btn-primary text-center" type="submit">Login</button>
       </form>
-      <p className="text-center mt-3">OR</p>
-      <Link to="/" className="d-block text-center">Register</Link>
+      <br />
+      <Link to="/" className="d-block btn btn-primary text-center">Register</Link>
+      <br />
     </div>
   );
 }

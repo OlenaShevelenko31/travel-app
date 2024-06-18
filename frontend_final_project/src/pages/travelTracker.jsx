@@ -8,7 +8,7 @@ function travelTracker() {
   return (
     <div  style={{display: 'flex', flexDirection: "column", justifyContent: 'center', alignContent: 'center'}}>
       <Navbar />
-      <h1 style={{display: 'flex', justifyContent: "center"}}>travel tracker</h1>
+      <h1 style={{display: 'flex', justifyContent: "center", color: 'white'}}>Check where you have been: </h1>
       <CountySelect/>
       <br />
       <Weather/>
