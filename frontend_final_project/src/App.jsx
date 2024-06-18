@@ -12,17 +12,10 @@ import Logout from './pages/logout'
 import VideoBG from './components/VideoBG';
 
 
-// import Navbar from './components/Navbar';
-
-
 function App() {
-
-
-  
   return (
     <>
     <VideoBG/>
-    {/* <Navbar/> */}
       <Routes>
         <Route path='/' element={<Register/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
@@ -30,9 +23,7 @@ function App() {
         <Route path='/tracker' element={<TravelTracker/>}></Route>        
         <Route path='/contact' element={<ContactUs/>}></Route>
         <Route path='/logout' element={<Logout/>}></Route>
-
       </Routes>
-  
     </>
   )
 }
