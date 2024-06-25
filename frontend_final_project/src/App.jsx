@@ -10,6 +10,8 @@ import TravelTracker from './pages/travelTracker'
 import ContactUs from './pages/contactUs'
 import Logout from './pages/logout'
 import VideoBG from './components/VideoBG';
+import ForgotPassword from './components/ForgotPassword.jsx';
+import ResetPassword from './components/ResetPassword.jsx';
 
 
 function App() {
@@ -19,6 +21,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Register/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
+
+        <Route path='/forgotPassword' element={<ForgotPassword/>}></Route>
+        <Route path='/resetPassword/:token' element={<ResetPassword/>}></Route>
+
+
         <Route path='/home' element={<Home/>}></Route>
         <Route path='/tracker' element={<TravelTracker/>}></Route>        
         <Route path='/contact' element={<ContactUs/>}></Route>
