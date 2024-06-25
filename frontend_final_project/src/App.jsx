@@ -3,8 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
 import {  Routes, Route } from 'react-router-dom'
-import Login from './components/Login'
-import Register from './components/Register'
+import Login from './pages/signIn.jsx'
+import Register from './pages/register'
 import Home from './pages/home'
 import TravelTracker from './pages/travelTracker'
 import ContactUs from './pages/contactUs'
@@ -28,4 +28,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

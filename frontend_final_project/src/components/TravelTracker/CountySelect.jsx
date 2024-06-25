@@ -11,7 +11,7 @@ const CountrySelect = ({ selectedCountry, onChange }) => {
 
     useEffect(() => {
         fetch(
-          "http://valid.layercode.workers.dev/list/countries?format=select&flags=true&value=code"
+          "https://valid.layercode.workers.dev/list/countries?format=select&flags=true&value=code"
         )
           .then((response) => response.json())
           .then((data) => {
@@ -36,7 +36,7 @@ function SelectCounty() {
     const userId = localStorage.getItem('userId'); 
 
     useEffect(() => {
-      const fetchPlaces = async () => { // get all traveled pla
+      const fetchPlaces = async () => { // get all traveled place
 
           try {
               const response = await axios.get(`http://localhost:8000/tracker?userId=${userId}`);
@@ -117,30 +117,33 @@ const handlePrint = () => {
 };
 
     return (
-        <Container>
-            <Form  onSubmit={handleSubmit}  style={{backgroundColor: "white"}}>
-                <CountrySelect 
+        <Container >
+            <Form className='travel_form' onSubmit={handleSubmit}  style={{backgroundColor: "white"}}>
+                <CountrySelect  
                   selectedCountry={selectedCountry} 
                   onChange={setSelectedCountry} 
                 />
                 <input 
+                className='travel_input'
                   type="text" 
                   placeholder='city ...' 
                   value={city} 
                   onChange={(e) => setCity(e.target.value)} 
                 />
-                <button className="btn btn-primary text-center p-1" type="submit">Submit</button>
+                <button className="travel_btn" type="submit">Submit</button>
             <div>
+            <div className='travel_center'>
                 <h3 style={{display: 'flex', justifyContent: "center"}}>Places Traveled</h3>
-                <ul>
+                <ul className='travel_list'>
                     {placesTraveled.map((place, index) => (
                       <li key={index}>
                         {place} 
-                        <button className="btn btn-warning text-center p-1" onClick={() => handleEdit(index)}>Edit</button>
-                        <button className="btn btn-primary text-center p-1" onClick={() => handleDelete(index)}>Delete</button>
+                        <button className="travel_btn yellow" onClick={() => handleEdit(index)}>Edit</button>
+                        <button className="travel_btn red" onClick={() => handleDelete(index)}>Delete</button>
                     </li>                    
                     ))}
                 </ul>
+            </div>
                 <button className="btn btn-success" onClick={handlePrint}>Print page where you have been</button>
             </div>
             <br />

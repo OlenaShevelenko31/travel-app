@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 const Logout = () => {
     useEffect(() => {
         localStorage.removeItem('userId'); 
-        window.location.href = '/login'; 
+        window.location.href = 'http://localhost:5173//'; 
     }, []);
 
     return (
